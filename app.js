@@ -57,6 +57,8 @@ const start = async () => {
   }
 };
 
-start();
-
-app.listen(port, () => console.log(`Server is listening on port ${port}...`));
+start().then(() => {
+  app.listen(port, () => {
+    console.log("listening for requests");
+  });
+});
